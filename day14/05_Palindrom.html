@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팰린드롬 인지?</title>
+</head>
+<body>
+    <h1>
+        펠린드롬: 거꾸로 읽어도 앞으로 읽어도 같은 단어 ex0 기러기, 스위스 토마토, 수박이박수
+    </h1>
+    단어입력: <input type="text" id="strData">
+    <button type="button" id="btn">입력</button>
+    <h3 id="result"></h3>
+    <script>
+        document.getElementById('btn').addEventListener('click',function(){
+            let txt = document.getElementById('strData').value;
+            let txtLen =txt.length;
+            for(i=0; i<txtLen; i++){
+                // console.log(txt.length[i].center );
+                if(txt.indexOf(0,Math.floor(txt.length/2)) == txt.indexOf(Math.floor(txt.length/2))){
+                    document.getElementById('result').innerText='팰린드롬입니다.';
+                }else{
+                    document.getElementById('result').innerText='팰린드롬이 아닙니다.';
+                }
+            }
+            // console.log(txtLen);
+
+        })
+        
+
+    </script>
+</body>
+</html>

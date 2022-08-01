@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        td{
+            padding:  5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="btn" onclick="">구구단 출력</button>
+    <div id="gugu">
+
+    </div>
+    <script>
+        document.getElementById('btn').addEventListener('click',function(){
+            let incre = 1; //1~9 증가하는 뒷쪽값
+            let str = "<table>";
+            while(incre < 10){ //10보다 작으면 반복
+                let line = "<tr>";
+                let dan =1;
+                while(dan < 10){ //10보다 작으면 반복
+                    
+                    line +=`<td>${dan} X ${incre} = ${dan*incre}</td>`;
+                    dan++; // 단증가
+                }
+                incre++; //뒷쪽값 증가
+                str+= `${line}</tr>`;
+            }
+            str+= "</table>";    
+            document.getElementById('gugu').innerHTML = str;
+        })
+
+        
+    </script>
+</body>
+</html>

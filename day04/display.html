@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display-table</title>
+    <style>
+      *{
+         margin: 0;
+         padding: 0;         
+      }
+      .title_item{
+              display: block;
+              font-size: 1em;
+      }
+      .desc_item{
+         font-size: 0.7em;
+      }
+      .title_item, .desc_item{
+         margin-top: 10px;
+      }
+      .container{
+         display: table; /* dispay 형태를 table로 설정*/
+         table-layout: fixed; /* 테이블 고정*/
+         width: 100%; /*화면 전체 크기*/
+         /* background-color: aliceblue; */
+      }
+      .container .box{
+         border: 1px double white;
+         display: table-cell; /* 부모 속성안에 들어가는 표안의 셀*/
+         vertical-align: middle;
+         text-align: center;
+         padding: 10px;
+         cursor: pointer;
+      }
+      /*hover기능*/
+      .thumb img{
+               width: 50%;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 첫 박스 한 세트 -->
+     <div class="box">
+       <span class="thumb">
+          <img src="D:\이희장\연습\day04\이미지\airpot.jpg" alt="">
+       </span>
+       <strong class="title_item">에어팟 프로</strong>
+       <p class="desc_item">최상의 음질 오래가는 배터리</p>
+     </div>
+    <!-- 2번째 박스 세트 -->
+    <div class="box">
+        <span class="thumb">
+           <img src="D:\이희장\연습\day04\이미지\apple-watch.jpg" alt="">
+        </span>
+        <strong class="title_item">애플워치</strong>
+        <p class="desc_item">세대를 거듭할수록 놀라워지는 성능</p>
+      </div>
+      <div class="box">
+        <span class="thumb">
+           <img src="D:\이희장\연습\day04\이미지\ipadpro.jpg" alt="">
+        </span>
+        <strong class="title_item">아이패드 프로</strong>
+        <p class="desc_item">최상의 퍼포먼스 괴물같은 칩셋 노트북보다 빠르다</p>
+      </div>
+      <div class="box">
+        <span class="thumb">
+           <img src="D:\이희장\연습\day04\이미지\iphone13pro.jpg" alt="">
+        </span>
+        <strong class="title_item">아이폰13pro</strong>
+        <p class="desc_item">현존 최상의 성능 향상된 배터리 완벽한 보안</p>
+      </div>
+      
+
+    </div>
+    
+    
+</body>
+</html>

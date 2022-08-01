@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    min-width: 900px;
+}
+a{
+    text-decoration-line: none;
+    color: goldenrod;
+}
+ul{
+    list-style-type: none;
+}
+.navibar{
+    height: 60px;
+    padding: 0px 30px;
+    background-color: white;
+}
+.navibar>a{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    font-weight: 700;
+}
+.navibar>ul{
+    float: left;
+}
+.navibar>ul>li{
+    display: inline;
+    margin-left: 350px;
+    line-height: 30px;
+    vertical-align: middle;
+
+}
+.navibar img{
+    width: 250px;
+    height: 100px;
+}
+.navibar>ul>li>a{
+    font-size: 20px;
+    font-weight: 700;
+}
+.main{
+    width: 100%;
+    height: 400px;
+    background-image:url(이미지/메인.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 560px;
+}
+h1{
+    margin: 65px 0px;
+    font-size: 50px;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+}
+.Menu{
+    width: 715px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+.Menu>a{
+    display: block;
+    float: left;
+    margin: 0 0 80px;
+    font-size: 16px;
+}
+.Menu>a img{
+    width: 225px;
+    height: 225px;
+}
+.Menu>a:nth-child(3n+2){
+    margin: 0px 20px;
+}
+.Menu ul{
+    text-align: center;
+    padding: 0;
+    margin: 20px auto 0;
+}
+.Menu ul li{
+    font-size: 16px;
+}
+.Menu ul:hover{
+    color: blue;
+}
+.Menu ul li:last-child{
+    margin-top: 4px;
+}
+.footer{
+    clear: both;
+    text-align: center;
+    margin: 120px auto 80px;
+}
+.footer>i{
+    font-size: 40px;
+}
+.footer>i:nth-child(2){
+    margin: 0 20px;
+}

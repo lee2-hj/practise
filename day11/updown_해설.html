@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자맞추기(해설본)</title>
+</head>
+<body>
+    <h1>UP DOWN GAME</h1>
+    <h1><button type="button" id="randomBtn" onclick="createrandomnum()">랜던숫자 생성 버튼</button></h1>
+    <h3 id="printMsg">
+
+    </h3>
+    <h1>
+        <input type="text" id="myNum">
+        <button type="button" id="guessBtn" onclick="comparenum2()">맞춰보기</button>
+        <button type="button" onclick="window.location.reload()">다시시작</button>
+    </h1>
+    <h3 id="ResultMsg">
+        <!-- 결과 메시지 출력 -->
+    </h3>
+    <script>
+        let rnum = 0; //랜덤 숫자가 저장될 변수
+        let count = 0; // 횟수
+        function createrandomnum(){ // 랜덤숫자 생성
+            rnum = Math.floor((Math.random()*50)+1);
+            document.getElementById('printMsg').innerText=`랜덤수(1~50)를 생성했습니다.`;             
+        }
+        //횟수 제한 없는 count만 체크하는 방식
+        function comparenum(){ //숫자 확인
+            let mynum = Number(document.getElementById('myNum').value); //입력값을 숫자로  변경 parseInt사용도 됨
+            if(mynum >0 && mynum <= 50){
+                //숫자를 한번 입력해서 맞추면 count++
+                if(rnum == mynum){
+                    count++;
+                    document.getElementById('ResultMsg').innerText=`시도횟수 : ${count} 정답입니다. 랜덤수는 ${rnum}입니다.`;
+                }else if(rnum > mynum){
+                    count++
+                    document.getElementById('ResultMsg').innerText=`시도횟수 : ${count} UP`;
+                }else{
+                    count++
+                    document.getElementById('ResultMsg').innerText=`시도횟수 : ${count} DOWN`;
+                }
+            }else{
+                document.getElementById('ResultMsg').innerText=`1~50사이의 숫자만 가능합니다.`;
+            }
+            // document.getElementById('randomBtn').addEventListener('click',createrandomnum);
+            // document.getElementById('guessBtn').addEventListener('click',comparenum);
+        }
+        //시도횟수 5번 제한
+        function comparenum2(){
+            if(count < 5){
+                document.getElementById('ResultMsg').innerText=`시도횟수: ${count+1}`;
+                count++;
+                let mynum = Number(document.getElementById('myNum').value); //입력값을 숫자로  변경 parseInt사용도 됨
+                if(mynum >0 && mynum <=50){
+                    // 삼항연산자: (조건식)? 참 : 거짓
+                    document.getElementById('ResultMsg').innerText=
+                    (rnum == mynum) ? `정답입니다. 랜덤수는 ${rnum}입니다.`
+                    : (rnum > mynum) ? `UP`
+                    : `DOWN` ;
+                }else{
+                    document.getElementById('ResultMsg').innerText=`1~50까지만 입력 가능합니다`;
+                    count--;
+                }
+
+
+            }else{
+                document.getElementById('ResultMsg').innerText=`시도횟수 ${count}회가 초과되었습니다. 랜덤수는 ${rnum} 이었습니다.`;
+            }
+        }
+    </script>
+</body>
+</html>

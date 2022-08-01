@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    <h1>
+        switch case 문: 식의 결과값이 일치하는 case에 따라 값을 처리해주는 조건문
+    </h1>
+    <h3>
+        연산이나 탐색면에서 if문보다 속도가 조금 더 빠름.
+        <br>
+        switch(조건식){
+            case 값1:
+                처리식;
+                break;
+            case 값2;
+                처리식;
+                break;
+            default:
+                처리식;
+        }
+    </h3>
+    <label for="">이름: <input type="text" id="name"></label><br>
+    <label for="">주민번호: <input type="text" id="resident"></label><br>
+    <button type="button" onclick="intro()">출력</button>
+    <h3 id="info">
+
+    </h3>
+    <script>
+        function intro(){
+            let resident= document.getElementById('resident').value;
+            let name = document.getElementById('name').value;
+            let nyeon = '';
+            
+            if(resident.substring(resident.indexOf("-")+1,resident.indexOf("-")+2)<3){
+                nyeon = 19 +resident.substring(0,2);
+            }else{
+                nyeon = 20 +resident.substring(0,2);
+            }
+           
+            let dal = resident.substring(2,4);
+            let il = resident.substring(4,6);
+            let str = nyeon +'-'+dal+'-'+il;
+            let date = new Date(str);
+            let day = date.getDay();
+            let day2 ='';           
+            
+            switch(day){
+                case 0:
+                    day2 = '일';
+                    break;
+                case 1:
+                    day2 = '월';
+                    break;
+                case 2:
+                    day2 = '화';
+                    break;
+                case 3:
+                    day2 = '수';    
+                     break;
+                 case 4:
+                    day2 = '목';
+                    break;
+                case 5:
+                    day2 =' 금';
+                    break;
+                case 6:
+                    day2 = '토';
+                    break;
+            }                                  
+           
+            console.log(day2);
+
+                
+            let now = new Date();
+            let birth = document.getElementById('resident').value.substring(0,6);
+            let year = now.getFullYear();
+            let age = year - birth.substring(0,2);
+            let age2 = (age >=2000)? 
+
+            age-2000 : age-1900;
+            
+            let sex = resident.charAt(7); 
+            let sex2 = (sex ==1 || sex == 3)? '남' :'여';
+            
+            document.getElementById('info').innerText=`이름: ${name}
+                                                       생년월일: ${str}(${day2})
+                                                       나이: ${age2}세 
+                                                       성별: ${sex2}`;     
+
+        //    console.log(year); 
+           
+        }
+    </script>
+    
+</body>
+</html>

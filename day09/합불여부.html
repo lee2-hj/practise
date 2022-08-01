@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>합/불여부</title>
+</head>
+<body>
+    <!-- 평균이 60이상이면 합격 -->
+    <!-- 평균이 90 이상이면 a 80 이상이면 b... -->
+    <form action="main">
+        <fieldset>
+            <legend>성적표</legend>
+                <label for="">이름: <input type="text" id="name"></label><br>
+                <label for="">국어: <input type="text" id="korean"></label><br>
+                <label for="">영어: <input type="text" id="english"></label><br>
+                <label for="">수학: <input type="text" id="math"></label><br>
+                <button type="button" onclick="suav()">평균/합계</button>
+        </fieldset>
+    </form>
+    <h3 id="avg/sum">
+
+    </h3>
+    <script>
+        function suav(){
+        let name =  document.getElementById('name').value; 
+        let kor = document.getElementById('korean').value;
+        let eng = document.getElementById('english').value;
+        let mat = document.getElementById('math').value;
+        kor = parseInt(kor);
+        // kor = Number(kor); //    number('1000원') => 숫자로 변환이 안되는 값일 경우 NaN으로 변환
+        eng = parseInt(eng);
+        // eng = Number(eng);
+        mat = parseInt(mat);
+        // mat = Number(mat);
+        if(kor >100 || kor<0 || end>100 || end<0 || mat>100 || mat<0){
+                alert('0~100사이만 입력 가능합니다.');
+            }else{
+            let sum = kor + eng + mat;
+            let avg = Math.round(sum/3);
+            }
+            let pass = (avg>=60)? '합격':'불합격';
+            let grade ='';
+            if(avg >= 90){
+                grade = 'A';
+            }else if(avg >= 80){
+                grade = 'B';
+            }else if(avg >= 70){
+                grade ='C';
+            }else if(avg >=60){
+                grade = 'D';
+            }else{
+                grade ='F';
+            }
+            document.getElementById('avg/sum').innerText =`이름: ${name}
+                                                           합계: ${sum}
+                                                           평균: ${avg}
+                                                           합격여부: ${pass}
+                                                           등급: ${grade}`;
+        }
+    </script>
+    
+</body>
+</html>

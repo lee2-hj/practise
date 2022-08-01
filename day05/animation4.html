@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>animation</title>
+    <style>
+        .box1{
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          border: 1px solid black;
+          animation: move1;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+        }
+        .box2{
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          border: 1px solid black;
+          animation: move2;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+        }
+        .box3{
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          border: 1px solid black;
+          animation: move3;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+        }
+        .box4{
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          border: 1px solid black;
+          animation: move4 10s linear infinite;
+          transform-origin: 50% 50% ;
+        }
+        @keyframes move1{
+            from{
+                
+                top: 0px;
+                
+            }
+            50%{
+                top: 90%;
+                background-color: blue;
+                border-radius: 100%;
+
+            }
+            to{               
+                top: 0;
+                background-color: white;
+                border-radius: 0;
+            }
+        }
+        @keyframes move2{
+            from{
+                left: 0px;
+            }
+            50%{
+                left: 90%;
+                background-color: red;
+                border-radius: 100%;
+            }
+            to{
+                left: 0;
+                background-color: white;
+                border-radius: 0;
+            }
+        }
+        @keyframes move3{
+            from{
+                margin: 0px;
+            }
+            50%{
+                margin: 90%;
+                background-color: yellow;
+                border-radius: 100%;
+            }
+            to{
+                margin: 0;
+                background-color: white;
+                border-radius: 0;
+            }
+        }
+        @keyframes move4{
+            10%{
+                background-color: red;
+            }
+            25%{
+                background-color: orange;
+            }
+            40%{
+                background-color: yellow;
+                border-radius: 50%;
+            }
+            55%{
+                background-color: green;
+            }
+            65%{
+               background-color: blue; 
+               border-radius: 100%;
+            }
+            80%{
+                background-color: navy;
+            }
+            95%{
+                background-color: violet;
+                border-radius: 50%;
+            }
+
+            100%{
+                transform: rotate(360deg);
+                background-color: white;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+     <div class="box4"></div>
+</body>
+</html>

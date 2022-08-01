@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itemList</title>
+</head>
+<body>
+    <h1>
+        여행때 가져갈 물건 목록
+    </h1>
+    <div class="main">
+    <input type="text" id="list">
+    <button type="button" id="add">추가</button>
+    <ul id="show">
+
+    </ul>
+    </div>
+<script>
+    document.getElementById('add').addEventListener('click',function(){
+         
+       const list =document.getElementById('list').value;
+        document.getElementById('show').innerHTML+=
+        `<li>${list}<button type="button" id="remove">X</button></li>`;
+    })
+   document.addEventListener('click', (e) =>{
+    const show = document.getElementById('show').innerHTML;
+    for(i=0; i<=show.length; i++){
+        delete show[i];
+            }
+       
+    
+   })
+</script>
+</body>
+</html>

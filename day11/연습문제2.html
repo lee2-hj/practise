@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>연습문제2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>
+        input text에 파일명, 확장자를 입력하여 전송버튼을 누르면 이미지파일인지 검사하여
+        이미지파일이면 정상입니다. 이미지 파일이 아니면 이미지 파일만 가능합니다. 라고 출력하기
+    </h1>
+    <form action="">
+       파일명: <input type="text" id="input"><br>
+        <button type="button" onclick="check()">전송</button><br>
+    </form>
+    <script>
+        function check(){
+            let input = document.getElementById('input').value;
+            console.log(input);
+            let search= input.lastIndexOf(".");
+            console.log(search);
+            let extension = input.substring(search+1);
+            console.log(extension);
+            if(extension == 'jpg' || extension =='jpeg' || extension =='png'|| extension =='gif'){
+                document.getElementById('printzone').innerText=`${input}은 이미지 파일입니다.`;
+            }else{
+                document.getElementById('printzone').innerText=`${input}은 이미지 파일만 가능합니다.`;
+            }
+
+        }
+    </script>
+    <h2 id = 'printzone'>
+
+    </h2>
+    <script>
+
+    </script>
+</body>
+</html>

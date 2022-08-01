@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형변환</title>
+</head>
+<body>
+    <h1>
+        casting(형변환): 데이터 타입을 원한는 형식으로 변경하는 기법
+    </h1>
+    <ul>
+        <li>
+            string => number : number("str"), parseInt("str"), parsFloat("str")
+        </li>
+        <li>
+            number => string : 123.tostring() , (123).tostring()
+        </li>
+        <li>
+            String => boolean : Boolean("true") 
+        </li>
+        <li>
+            boolean => String : String(true) 
+        </li>
+        <li>
+            number => boolean : true = 1 / false = 0 Boolean(1), Boolean(0)
+        </li>
+        <li>
+            boolean => number : Number(true), Number(false)
+        </li>
+    </ul>
+    <script>
+        let num = 12345;
+        let numstr = num.toString();
+        console.log(numstr);
+        console.log(num);
+        console.log(typeof numstr);
+        console.log(typeof num);
+
+        let t = true;
+        let b = String(t);
+        console.log(b);
+        console.log(typeof b);
+        console.log(t);
+        console.log(typeof t);
+    </script>
+</body>
+</html>

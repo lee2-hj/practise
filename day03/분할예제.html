@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분할예제1</title>
+    <!-- 
+        p-box: 500*500 px 검정테두리
+        box1,box2: 반반 나눠서 채우기 bg-color 채우기
+     -->
+     <style>
+        .p-box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            
+        }
+        .box1{
+            width: calc(100%/3);
+            height: 100%;
+            background-color: blue;
+            display: inline-block;
+            float: left;
+        }
+        /* calc(식): 단위가 다르거나, 나누기 힘든 값들을 계산해서 넣어줄때 */
+        .box2{
+            width: calc(100%/3);
+            height: 100%;
+            background-color: white;
+            display: inline-block;
+            float: middle;
+        }
+        .box3{
+            width: calc(100%/3);
+            height: 100%;
+            background-color: red;
+            display: inline-block;
+            float: right;
+
+
+        }
+     </style>
+</head>
+<body>
+    <div class="p-box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    
+</body>
+</html>

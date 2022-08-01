@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map 연습문제</title>
+</head>
+<body>
+    <!-- input 2개 생성 과목,점수
+    입력버튼을 눌러서 받으면 map에 추가 
+    출력 버튼을 누르면 입력받은 map을 출력-->
+    과목: <input type="text" id="subject"><br>
+    점수: <input type="text" id="score"><br>
+    <button type="button" onclick="submit()">점수 입력</button>
+    <button type="button" onclick="Myclass()">점수 출력</button>
+    <h2 id="myResult">
+
+    </h2>
+    <script>
+        const result = new Map();
+        function submit(){
+            let subject= document.getElementById('subject').value;
+            let score = Number(document.getElementById('score').value);
+            result.set(subject,score);
+            
+        }
+        function Myclass(){
+            console.log(myResult);
+            document.getElementById('myResult').innerHTML="";
+            result.forEach(function(value,key,self){             
+                    document.getElementById('myResult').innerHTML+=`과목:${key} 점수: ${value} <br>`;
+            })
+                
+           
+        }
+    </script>
+</body>
+</html>

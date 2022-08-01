@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색속성</title>
+    <!-- 
+        생상관련 속성
+         - color : 글자색
+         - background-color : 배경색
+         - border-color : 태두리색
+        색상을 지정하는 방법
+         - 이미 지정된 이름을 사용하는 방법: red,green,blue...
+         - 색상 코드를 사용하는 방법: #ff0000...
+         - RGB코드 사용하는 방법: RGB(255,0,0)...
+         - RGBA코드를 사용하는 방법: RGBA(255,0,0,0)
+         - A: 투명도 값을 추가 0~1
+     -->
+     <style>
+        .color{
+            color: blue;
+        }
+        .bg-color{
+            background-color: blueviolet;
+        }
+        .border-color{
+            border-style: double;
+            border-color: rgb(255, 0, 0);
+            
+        }
+        .border-color:hover{
+            background-color: yellow;
+        }
+        p{
+            font-size: 20px;
+        }
+       p:nth-child(even){
+        color: blue;
+       }
+       .p1, .p3{
+        color: blue;
+       }
+        /*.bordercolor : hover */
+     </style>
+</head>
+<body>
+    <div class="color">안녕하세요(글자색)</div>
+    <div class="bg-color">안녕하세요(배경색)</div>
+    <div class="border-color">안녕하세요(테두리색)</div>
+    <!-- font-size : 20px -->
+    <!-- 1,3번 p태그에 색상 파랑 -->
+    <p class="p1">1. 안녕하세요</p>
+    <p class="p2">2. 안녕하세요</p>
+    <p class="p3">3. 안녕하세요</p>
+    
+</body>
+</html>

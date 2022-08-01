@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list속성</title>
+    <!-- 
+       list-style-type: 마커 타입 지정
+       list-style-image: 마커 자리에 이미지 지정
+       list-style-position: 마커 위치(안/밖)
+       list-style: 위 3가지 속성을 한번에 지정
+     -->
+     <style>
+        .inside{
+            /* list-style-image: url(D:\이희장\연습\day03\이미지\dog.jpg); */
+            list-style-type: square;
+            list-style-position: inside;
+        }
+        .outside{
+            list-style-position: outside;
+        }
+        ul{
+            background-color: aquamarine;
+        }
+        li{
+            background-color: aqua;
+        }
+        .none{
+            list-style-type: none; /* 마커타입x*/
+            padding: 0;
+        }
+     </style>
+</head>
+<body>
+    <ul class="inside">
+         <li>사과</li>
+         <li>오렌지</li>
+         <li>배</li>
+
+    </ul>
+    <ul class="outside">
+        <li>사과</li>
+        <li>오렌지</li>
+        <li>배</li>
+
+   </ul>
+   <ul class="none">
+    <li>사과</li>
+    <li>오렌지</li>
+    <li>배</li>
+
+</ul>
+    
+</body>
+</html>

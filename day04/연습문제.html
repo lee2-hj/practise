@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+    <style>
+       .main{
+        margin: auto;
+        width: 400px;
+        height: 510px;
+        border: 1px dotted black;
+       }
+       .top{
+        width: 376px;
+        height: 70px;
+        border: 3px solid black;
+        margin: 10px;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 30px;
+        font-weight: bold;
+       }
+       .middle{
+        width: 370px;
+        height: 320px;
+        border: 3px solid black;
+        margin: 10px;
+        /* position: relative; */
+
+       }
+      
+       .bottom{
+        width: 377px;
+        height: 70px;
+        border: 3px solid black;
+        margin: 10px;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 30px;
+        font-weight: bold;
+       }
+       .x{
+        background-color: black;
+        width: 100px;
+        height: 100px;
+        top: 130px;
+        left: 300px;
+        position: absolute;
+        z-index: 1;
+        margin-top: 30px;
+        margin-left: 30px;
+        box-shadow: 5px 5px 5px gray;
+       }
+       .y{
+            background-color: yellow;
+            top: 170px;
+            left: 360px;
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            margin-left: 30px;
+            position: absolute;
+            box-shadow: 5px 5px 5px gray;
+        }
+        .z{
+            background-color: red;
+            top: 220px;
+            left: 420px;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            z-index: -1;
+            margin-top: 30px;
+            margin-left: 30px;
+            box-shadow: 5px 5px 5px gray;
+           
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top">텍스트</div>
+        <div class="middle">
+            <div class="x"></div>
+            <div class="y"></div>
+            <div class="z"></div>
+        </div>
+        <div class="bottom">텍스트</div>
+
+    </div>
+    
+</body>
+</html>

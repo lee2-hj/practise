@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+    <h1>
+        Json : JavaScript Object Notaion: 자바스크립트의 객체 표기법
+    </h1>
+    <ul>
+        <li>
+            데이터의 요청 및 응답처리에 필요한 데이터의 표준형식을 제공하는 타입
+        </li>
+        <li>
+            백엔드 언어에 종류의 상관없이 데이터 송수신을 단일 형식으로 통일함
+        </li>
+        <li>
+            데이터 전송은 모두 String타입으로 이루어지기 때문에 송수신 모듈에서 타입의 변환이 필요함
+        </li>
+        <li>
+            서버로 테이터 보낸때 -> json to String -> JSON.Stringify(jsObject)
+        </li>
+        <li>
+            서버로부터 데이터를 받을 때 -> String to json -> JSON.parse(StringData)
+        </li>
+    </ul>
+    <script>
+        const StringData = '{"id":"00001","type":"dounut","name":"Cake",'
+                            +'"image":{"url":"images/0001.jpg","width":200,"height":200},'
+                            +'"thumbnail":{"url":"images/thumbnails/0001.jpg","width":32,"height":32}}';
+
+
+        let parseData = JSON.parse(StringData);
+        console.log(parseData);
+        //parseData를 console에 key:value 형식으로 출력
+        //반복문 for in
+        for(const key in parseData){
+            if(key == 'image'|| key == 'thumbnail'){
+                let nestedObject = parseData[key]
+                for(const k in nestedObject){
+                    console.log(k,":",nestedObject[k])
+                }
+            }else{
+
+                console.log(key,":",parseData[key]);
+            }
+
+        }
+        const myInfoData = {
+            "name":'oh',
+            "age":'42',
+            'blood':'o',
+            'addr':'incheon'
+        };
+        let myInfoString = JSON.stringify(myInfoData);
+        console.log(myInfoString);
+        console.log(typeof myInfoString);
+
+        //출력모양 >{"name":"oh","age":"42","blood":"o","addr":"incheon"}
+        //for문을 이용하여 출력모양 str로 만들어보기
+        let str = '{';
+        let str2 = '}';
+        //for문으로 key,value str에 출력
+        // for(const outData in myInfoData){
+        //     str+=" ";
+        //     str+= `"${outData}":"${myInfoData[outData]}",`
+        //     str.repeat(str.lastIndexOf(","),"");
+        //     console.log(str+str2);
+        // }
+        // // str+=
+        for(const key in myInfoData){
+            str+= `"${key}":"${myInfoData[key]}",`;
+        }
+        str = str.substring(0,str.length-1);
+        str+='}'
+        console.log(str);
+        console.log(JSON.parse(str));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img  id="pic" src="D:\이희장\연습\day12\이미지\rock.jpg" alt="">
+    <script>
+        let pick = document.getElementById('pic');
+        pick.addEventListener('mouseover',changePic);
+        pick.addEventListener('mouseout',originPic);
+        function changePic(){
+            pic.src="D:/이희장/연습/day12/이미지/paper.jpg";
+
+        }
+        function originPic(){
+            pic.src="/D:/이희장/연습/day12/이미지/rock.jpg";
+        }
+    </script>
+</body>
+</html>

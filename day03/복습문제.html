@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습문제</title>
+    <!-- 
+        500*500px 박스를 만들어 안녕하세요 글자 표현
+        - 글자속성: 크기, 글꼴, 정렬
+        - 박스속성: bg-color, border
+     -->
+     <!-- 버튼생성: 버튼, 버튼을 누르면 네이버로 이동 -->
+     <style>
+         .re{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 40px;
+            border: 2px double goldenrod;
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            padding-top: 200px;
+            background-color: skyblue;
+            color: yellow;
+            text-shadow: 10px 10px 20px black;
+            box-shadow: 10px 10px 20px gray;
+            font-style: italic;
+            /*vertical -align: middle; => inline/ inline-block 속성만 먹히는 세로정렬 속성 */
+
+         }
+         .button{
+            width: 200px;
+            height: 100px;
+            font-size: 30px;
+            text-decoration-line: none;
+            background-color: greenyellow;
+            border: 1px solid white;
+            color: green;
+            cursor: pointer;
+         }
+
+     </style>
+</head>
+<body>
+    <div class="re">
+        안녕하세요
+
+    </div>
+    <br>
+    <a href="http://www.naver.com" target="_blank"><button class="button">버튼</button></a>
+    
+</body>
+</html>

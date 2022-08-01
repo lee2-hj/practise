@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <div classs="infobox">
+        <h3>오늘은?</h3>
+        <button type="button" id="btn" onclick="day()">Today</button>
+        <h3 id="week">
+
+        </h3>
+        <input type="date" id="date"><br>
+        <button type="button" onclick="day2()"> weekday</button><br>
+        <h3 id="week2">
+
+        </h3>
+    </div>
+    <script>
+        function day(){
+           let now = new Date();
+           let day = now.getDay();
+           let year = now.getFullYear();
+           let month = now.getMonth()+1;
+           let date = now.getDate(); 
+           let hour =now.getHours();
+           let minute = now.getMinutes();
+           let second = now.getSeconds();
+           let week2 = document.getElementById('date').value;
+           console.log(date);
+           
+           let day2 ='';
+           switch(day){
+            case 0:
+                day2 = '일요일';
+                break;
+            case 1:
+                day2 = '월요일';
+                break;
+            case 2:
+                day2 = '화요일';
+                break;
+            case 3:
+                day2 = '수요일';
+                break;
+            case 4:
+                day2 = '목요일';
+                break;
+            case 5:
+                day2 = '금요일';
+                break;
+            case 6:
+                day2 = '토요일';
+                break;                    
+           };
+           document.getElementById('week').innerText=`오늘은 ${year}년 ${month}월 ${date}일 ${day2} 입니다.
+                                                       현재 시각은 ${hour}시 ${minute}분 ${second}초 입니다.`;
+           
+           
+
+        }
+        function day2(){
+           let now = new Date(date);
+           let day = now.getDay();
+           let year = now.getFullYear();
+           let month = now.getMonth()+1;
+           let date = now.getDate(); 
+           let hour =now.getHours();
+        //    let minute = now.getMinutes();
+        //    let second = now.getSeconds();
+        //    let week2 = document.getElementById('date').value;
+           
+           
+           console.log(week2_day);
+           
+           let day2 ='';
+           switch(day){
+            case 0:
+                day2 = '일요일';
+                break;
+            case 1:
+                day2 = '월요일';
+                break;
+            case 2:
+                day2 = '화요일';
+                break;
+            case 3:
+                day2 = '수요일';
+                break;
+            case 4:
+                day2 = '목요일';
+                break;
+            case 5:
+                day2 = '금요일';
+                break;
+            case 6:
+                day2 = '토요일';
+                break;                    
+           };
+           document.getElementById('week2').innerText = `${now} ${day2}`;
+        }
+    </script>
+</body>
+</html>

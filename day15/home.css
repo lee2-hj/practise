@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    min-width: 900px;
+}
+a{
+    text-decoration-line: none;
+    color: white;
+}
+ul{
+    list-style-type: none;
+}
+.header{
+    height: 60px;
+    padding: 0px 30px;  
+}
+.header a{
+    float: left;
+    height: 10px;
+    line-height: 10px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.header a:hover{
+    cursor: pointer;
+    color: aqua;
+}
+.header li{
+    float: right;
+    margin-right: 30px;
+}
+.main{
+    text-align: center;    
+}
+.center{
+    height: 500px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+body{
+    background-color: rgba(0, 0, 0); 
+    background-image: url(이미지/sunset.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.center h1{
+    color: white;
+    font-weight: bold;
+
+}
+.btn{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: white;
+    border: none;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: aqua;
+}
+
+
+

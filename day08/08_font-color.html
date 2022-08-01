@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+</head>
+<body>
+    <h1 id="heading">javascript</h1>
+    <h3>위 글자를 클릭해보세요.</h3>
+    <!-- 글자를 생성 후 글자를 클릭하면 파란색으로 변경 -->
+    <h3 id="click">클릭해보세요</h3>
+    <script>
+        let heading = document.querySelector('#heading');
+        heading.onclick = function(){
+            heading.style.color = 'orange';
+        }
+
+        let click = document.querySelector('#click');
+        click.onclick = function(){
+            click.style.color = 'blue';
+            click.style.setProperty("font-size","30px"); //css의 style 속성 변경
+        }
+    </script>
+</body>
+</html>

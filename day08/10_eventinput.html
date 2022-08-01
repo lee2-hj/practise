@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 받기</title>
+</head>
+<body>
+    <h1>
+        form태그를 통해서 데이터를 받아오기
+    </h1>
+    <ul>
+        <li>
+            input,text, select, html element의 속성, 텍스트 등 데이터 값을 받아오기
+        </li>
+        <li>
+            form태그의 데이터는 value 속성의 값으로 매핑되어 있으므로 value 속성을 호출하면 된다.
+        </li>
+        <li>
+            select, radio, checkbox의 값의 경우 value값이 선택된 값을 가져와야 하기 때문에 추가코드가 필요
+        </li>
+        <li>
+            value속성 데이터는 모두 string으로 처리된다.
+        </li>
+    </ul>
+    <hr>
+    <br>
+     <form action="" id="myform">
+        <fieldset>
+            <legend>이벤트를 활용한 전송</legend>
+                ID: <input type="text" id="userid"><br>
+                PassWord:  <input type="password" id="userpw"><br>
+                BirthDay: <input type="date" id="userbirth"><br>
+                pin: <input type="number" id="pin"><br>    
+                <button type="button" id="sbmbtn" onclick="makeInfo()">전송</button>
+                <button type="button" id="listbtn" onclick="makeList()">리스트로 출력</button>
+                    
+            </fieldset>   
+     </form>
+    
+
+     <h3 id="info">
+        <!-- 전송버튼 클릭했을때 출력 될 위치 -->
+     </h3>
+     <ol id="ol">
+        <!-- 리스트로 출력됐을때 출력 될 위치 -->
+     </ol>
+     <script>
+        function makeList(){
+            let userid = document.getElementById('userid').value;
+            let userpw = document.getElementById('userpw').value;
+            let userbirth = document.getElementById('userbirth').value; //string 형태로 저장
+            let pin = document.getElementById('pin').value; //string 형태로 저장
+
+            pin = parseInt(pin); //parseInt('정수로 변경될 수 있는 문자만 가능');
+            pin = Number(pin); // number('숫자로 변경될 수 있는 값');
+            // console.log(pin);
+            userbirth = new Date(userbirth); // 날짜 형식으로...
+            let ol = document.getElementById('ol');
+            // ol.innerHTML = `<li> ${userid}</li>`;
+            // ol.innerHTML += `<li> ${userpw}</li>`;
+            // ol.innerHTML += `<li> ${userbirth}</li>`;
+            // ol.innerHTML += `<li> ${pin}</li>`;
+            let str = `<li> ${userid}</li> <li> ${userpw}</li> <li> ${userbirth}</li> <li> ${pin}</li>`;
+            ol.innerHTML =str;
+            
+        }
+        function makeInfo(){
+            let userid = document.getElementById('userid').value;
+            let userpw = document.getElementById('userpw').value;
+            let userbirth = document.getElementById('userbirth').value;
+            let pin = document.getElementById('pin').value;
+            pin = parseInt(pin); //parseInt('정수로 변경될 수 있는 문자만 가능');
+            pin = Number(pin); // number('숫자로 변경될 수 있는 값');
+            userbirth = new Date(userbirth); // 날짜 형식으로...
+            document.getElementById('info').innerText = `${typeof userid}:${userid} 
+                                                         ${typeof userpw} :${userpw}
+                                                         ${typeof userbirth}:${userbirth}
+                                                         ${typeof pin} : ${pin} `;
+            // document.getElementById('info').innerText += ` ${typeof userpw} :${userpw} `;
+            // document.getElementById('info').innerText += ` ${typeof userbirth}:${userbirth} `;
+            // document.getElementById('info').innerText += ` ${typeof pin} : ${pin}`;
+        }
+        console.log(makeList.pin);
+     </script>
+</body>
+</html>

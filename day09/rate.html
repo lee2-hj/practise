@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인율</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" id="sail">
+        <label for="">  원가: <input type="text" id="price"></label><br>
+        <label for="">할인율: <input type="text" id="rate"></label><br>
+        <button type="button" onclick="sail()">할인가격</button>
+    </form>
+    <h1 id="priceRate">
+
+    </h1>
+<script>
+    function sail(){   
+    let price = document.getElementById('price').value;
+    let rate = document.getElementById('rate').value;
+    price = parseInt(price);
+    rate = parseInt(rate);
+    let persent = rate/100;
+    let persent2 = price*persent
+    let sailPrice = price - persent2;
+    document.getElementById('priceRate').innerText =`상품의 원가는 ${price}원이고, 
+    할인율은 ${rate}% 입니다. ${persent2}원을 절약한 ${sailPrice}원에 살 수 있습니다.`;
+    }
+</script>
+</body>
+</html>

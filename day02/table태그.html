@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table태그</title>
+</head>
+<body>
+    <!-- 
+        table = 표
+        table태그는 다른 태그와 조홥에서 나온다.
+        -tr태그 : 한 행을 의미
+        -td/th태그: 한 행에서 한 열을 의미(한칸)
+        -td태그: 왼쪽정렬, 보통글씨
+        -th태그: 가운데 정렬, 굵은글씨
+
+
+        - 3행 4열 테이블을 생성
+        -tr태그 3개
+        -td태그 4개 *3줄 =12개
+        (css에 가능한 속성)
+        - table 태그 속성
+         - border: 태두리두깨
+         - bordercolor : 태두리색
+         - width: 가로길이
+        - th/td 태그속성
+         - colspan/rowspan: 셀 병합, 병합된 칸은 지워줘야 함.
+
+
+     -->
+     <table border="1" bordercolor="#000000" width="50%">
+       <tr>
+        <th>학년</th>
+        <th>이름</th>
+        <th colspan="2">시험성적</th>
+        
+       </tr>
+       <tr>
+        <td rowspan="2">1</td>
+        <td>홍길동</td>
+        <td>90</td>
+        <td>80</td>
+       </tr>
+       <tr>
+
+        <td>유관순</td>
+        <td>89</td>
+        <td>87</td>
+       </tr>
+       <tr>
+        <td>3</td>
+        <td>김영희</td>
+        <td>79</td>
+        <td>50</td>
+       </tr>
+
+     </table>
+     <br>
+     <!-- 3행 4열의 표를 만들어서 1~12까지 값을 채워라 -->
+     <table border="1" bordercolor="black" width="50%">
+     <tr>
+     <td>1</td>
+     <td>2</td>
+     <td>3</td>
+     <td>4</td>
+     </tr>
+     <tr>
+     <td>5</td>
+     <td>6</td>
+     <td>7</td>
+     <td>8</td>
+     </tr>
+     <tr>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+     </tr>
+
+     </table>
+     <br>
+     <!-- 
+        - thead,tbody,tfoot, caption 태그를 사용할 수 있다.(필수는 아님)
+        - 순서는 thead> tbody> tfoot 순으로 배치
+        - 순서가 달라져도 해당 순서대로 배치됨.
+      -->
+      <table border="2" bordercolor="blue" width="40%">
+          <caption>성적표</caption>
+          <thead>
+            <tr>
+                <th>과목</th>
+                <th>이름</th>
+                <th>중간</th>
+                <th>기말</th>               
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                 <th>국어</th>
+                 <th>이길동</th>
+                 <th>80</th>
+                 <th>90</th>
+              </tr>
+              <tr>
+              <th>영어</th>
+              <th>박나라</th>
+              <th>60</th>
+              <th>60</th>
+              </tr>
+              <tr>
+                <th>수학</th>
+                <th>일론 머스크</th>
+                <th>100</th>
+                <th>100</th>
+              </tr>
+              <tr>
+                <th>컴퓨터개론</th>
+                <th>에니악</th>
+                <th>30</th>
+                <th>50</th>
+              </tr>
+              <tr>
+                <th colspan="2">평균</th>
+                <th>67.5</th>
+                <th>75</th>    
+              </tr>
+
+
+          </tbody>
+
+      </table>
+      <br>
+      <form action="">
+      <table>  
+        <caption><h2>회원가입</h2></caption>
+        <tr>
+            <td>아이디:</td>
+            <td><input type="text" name="id"></td>
+        </tr>
+        <tr>
+            <td>비밀번호:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>비밀번호 확인:</td>
+            <td><input type="password" name="passcheck"></td>
+        </tr>
+        <tr>
+            <td>이메일:</td>
+            <td><input type="text" name="email1">@</td>
+            <td><select name="이메일 선택">
+            <option value="gmail.com"></option>
+            <option value="naver.com"></option>
+            <option value="hanmail.net"></option>
+        </select>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>성별:</td>
+            <td><label for="m"><input type="radio" name="성별" id="m">남성</label></td>
+            <td><label for="w"><input type="radio" name="성별" id="w">여성</label></td>
+        </tr>
+        <tr>
+            <td>전화번호:</td>
+            <td><input type="number" name="num1">-</td>
+            <td><input type="number" name="num2">-</td>
+            <td><input type="number" name="num3"></td>
+        </tr>
+        <tr>
+            <th colspan="4"><button type="submit">회원가입</button></th>
+        </tr>
+      </table>
+     </form>
+
+    
+</body>
+</html>

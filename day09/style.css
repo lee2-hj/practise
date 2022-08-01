@@ -1,0 +1,20 @@
+form{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#price{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px; 
+    width: 80%;
+    margin-left: 10px;     
+}
+#rate{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 78%;
+}

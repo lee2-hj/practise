@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+<body>
+    <h1>
+        화살표 함수(Aarrow function): Es6부터 사용가능한 함수정의법
+    </h1>
+    <h3>
+        가독성이 낮으나 코드의 양을 줄일 수 있고, 표현식처럼 변수화를 사용할 수 있다.
+    </h3>
+    <script>
+        // const arrowFuction = (parm1, parm2) => {
+        //     //코드작성;
+        //     //return;
+        // };
+
+        //리턴 값이 있을 때
+        const arrowFuction2 = (p1, p2) => {return p1+p2};
+        const arrowFuction3 = (p1,p2) => p1+p2;
+
+        //리턴값이 없을 때 사용방식
+        const arrowFuction4 = (a,b) => {
+            console.log('리턴없음',a+b);
+        };
+        const result = arrowFuction2(1,5);
+        console.log(result);
+        const result1 = arrowFuction3(1,5);
+        console.log(result1);
+        const result2 = arrowFuction4(1,3);
+        console.log(result2);
+    </script>
+    
+</body>
+</html>

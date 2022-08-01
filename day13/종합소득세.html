@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        종합소득세 = 과세표준 * 소득세율
+    </h1>
+    <h3>
+        과세표준 = 총소득액 - 총공제인정액
+    </h3>
+    <ul>
+        <li>
+            총소득액 산출 = 시간당 pay를 입력받기, 하루 근무시간 입력받기, 1년 근수일수 입력받기(1년 52주)
+        </li>
+        <li>
+            총공제인정액(약식신고%): 랜덤으로 약식신고% = 30%~40%를 산출한다
+        </li>
+        <li>
+            과세표준의 해당구간의 세율을 부과하여 세액을 출력하세요
+        </li>
+    </ul>
+    시급: <input type="text" id="money">만원<br>
+    근무시간: <input type="text" id="partTime">시간<br>
+    연간 근무일: <input type="text" id="workingday">일<br>
+    <button type="button" onclick="synthesizeTex()">종합소득세 계산</button><br>
+    <h3 id="result">
+
+    </h3>
+    <script>
+        function synthesizeTex(){
+        let money = Number(document.getElementById('money').value);
+        let time = Number(document.getElementById('partTime').value);
+        let day = Number(document.getElementById('workingday').value);
+        let sum = (money*time)*day; // 총소득액
+        let persent = (Math.random()*0.4)+0.3;
+        let sumper = sum-Math.round((sum*persent)); // 과세표준
+        let imp = '';
+        
+        if(sumper<=1200){
+            imp = Math.round((sumper *0.06));
+        }else if(sumper >1200 || sumper<=4600){
+            imp = Math.round((sumper*0.15)-108);
+        }else if(sumper >4600 || sumper <=8800){
+            imp = Math.round((sumper*0.24)-522);
+        }else{
+            imp = Math.round((sumper*0.35)-1490);
+        }
+        document.getElementById('result').innerText = `시급${money}만원, 하루${time}시간, 연간 ${day}일 만큼 일할 경우
+                                                       총소득액은 ${sum} ,과세표준은${sumper}으로 연간 종합소득세는 ${imp}만원 입니다.`
+    }
+
+    </script>
+
+</body>
+</html>

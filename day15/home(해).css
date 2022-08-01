@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(이미지/부산.jpg);
+    background-size: cover;
+}
+.container .header{
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.container .header h1 a{
+    text-decoration-line: none;
+    color:  white;
+}
+.container .navi ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+.container .navi ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.container .navi ul li a:hover{
+    color: aqua;
+}
+.container .hero{
+    /* 전체 브라우저 정렬 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+}
+.container .hero h2{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.container .hero button{
+    background-color: none;
+    border: none;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+    font-size: 0.8rem;
+}
+.container .hero button:hover{
+    background-color: darkgray;
+}
+

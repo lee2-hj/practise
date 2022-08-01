@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        단순 사칙연산 계산기 만들기
+    </h3>
+    <table>
+        <tr>
+            <td>
+                <button type="button" id="7" >7</button>
+                <button type="button" id="8" >8</button>
+                <button type="button" id="9">9</button>
+                <button type="button" id="+">+</button>
+                <button type="button" id="c">C</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="4">4</button>
+                <button type="button" id="5" >5</button>
+                <button type="button" id="6" >6</button>
+                <button type="button" id="-">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="1">1</button>
+                <button type="button" id="2">2</button>
+                <button type="button" id="3">3</button>
+                <button type="button" id="*">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id=".">.</button>
+                <button type="button" id="0">0</button>
+                <button type="button" id="=">=</button>
+                <button type="button" id="/" >/</button>
+            </td>
+        </tr>
+    </table>
+    <h2 id="result">
+
+    </h2>
+    <script>
+        document.addEventListener('click', (e) =>{
+            let zero='';
+            let one='';
+            let two='';
+            let three='';
+            let four='';
+            let five = '';
+            let six = '';
+            let seven= '';
+            let eight='';    
+            let nine='';
+            let ten='';
+            let plus='';
+            let sub='';
+            let mult='';
+            let div='';       
+            // document.getElementById('result').innerText='';
+            if(e.target.id == '1'){
+                document.getElementById('result').innerText+='';
+                one = document.getElementById('1').onclick =1;
+                document.getElementById('result').innerText= one;
+            }else if(e.target.id == '2'){
+                two = document.getElementById('2').onclick =2;
+                document.getElementById('result').innerText= two;
+            }else if(e.target.id == '3'){
+                three = document.getElementById('3').onclick =3;
+                document.getElementById('result').innerText= three;
+            }else if(e.target.id == '4'){
+                four = document.getElementById('4').onclick =4;
+                document.getElementById('result').innerText= four;
+            }else if(e.target.id == '5'){
+                five = document.getElementById('5').onclick =5;
+                document.getElementById('result').innerText= five;
+            }else if(e.target.id == '6'){
+                six = document.getElementById('6').onclick =6;
+                document.getElementById('result').innerText= six;
+            }else if(e.target.id == '7'){
+                seven = document.getElementById('7').onclick =7;
+                document.getElementById('result').innerText= seven;
+            }else if(e.target.id == '8'){
+                eight = document.getElementById('8').onclick =8;
+                document.getElementById('result').innerText= eight;
+            }else if(e.target.id =='9'){
+                nine = document.getElementById('9').onclick =9;
+                document.getElementById('result').innerText= nine;
+            }else if(e.target.id=='0'){
+                zero = document.getElementById('0').onclick =0;
+                document.getElementById('result').innerText= zero;
+            }else if(e.target.id=='+'){
+                plus = document.getElementById('+').onclick = '+';
+                document.getElementById('result').innerText += plus;
+            }
+
+        })
+
+            
+        
+    </script>
+</body>
+</html>

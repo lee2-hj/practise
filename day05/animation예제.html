@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>animation</title>
+    <!-- div 왼쪽으로 천천히 이동했다가 다시 돌아오는  애니메이션 작성 -->
+    <style>
+       .box{
+            /* width: 50px;
+            height: 50px; */
+            /* border: 2px solid black; */
+            transform-origin: 50% 0%;
+            animation: going;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 0.5s;
+
+        }
+        @keyframes going{
+            0%{
+                transform: rotate(0deg);
+            }
+            10%{
+               transform: rotate(45deg); 
+            }
+            20%{ 
+                transform: rotate(-45deg);                
+            }
+            30%{
+                 transform: rotate(30deg);   
+            }
+            40%{
+               transform: rotate(-30deg); 
+            }
+            50%{
+                transform: rotate(10deg);     
+            }
+             60%{
+                transform: rotate(-10deg);
+             }
+             70%{
+                transform: rotate(0deg);
+             }
+             100%{
+                transform: rotate(0deg);
+             }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="material-symbols-outlined">
+            notifications
+            </span>
+    </div>
+    
+</body>
+</html>

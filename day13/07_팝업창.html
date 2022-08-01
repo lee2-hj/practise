@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window 팝업창</title>
+</head>
+<body>
+    <h1>
+        과거에는 많이 사용되었으나 디자인,데이터 컨트롤이 어려워 지금은 지양되고 있다.
+    </h1>
+    <ul>
+        <li>
+            window.open('url','window name', 'option(size,scroll..)')
+        </li>
+    </ul>
+    <button type="button" onclick="openWindow()">열기</button>
+    <button type="button" onclick="clseWindow()">닫기</button>
+    <button type="button">체크</button><br>
+    <h3 id="msg">
+
+    </h3>
+    <script>
+        let myWindow;
+        function openWindow(){
+            myWindow = window.open('//naver.com','myWindow','width=400, height=500');
+            
+        }
+        function clseWindow(){
+            if(myWindow){// 열려있는 상태
+              myWindow.close();
+            }
+        }
+        function checkWindow(){
+            if(myWindow){
+                document.getElementById('msg').innerText='팝업창이 열렸습니다.';
+            }else if(myWindow.closed){
+                document.getElementById('msg').innerText='팝업창이 닫혔습니다.';
+            }
+        }
+    </script>
+</body>
+</html>

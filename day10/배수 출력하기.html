@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배수</title>
+</head>
+<body>
+    <!-- 배수출력하기 -->
+    <!-- 1~100까지의 3의 배수 출력 -->
+    <button type="button" id="btn"> 3의 배수</button><br>
+    <button type="button" id="btn2">배수 출력</button><br>
+    <input type="number"id="num">
+    <h3 id="th_3">
+
+
+    </h3>
+    <script>
+        document.getElementById('btn').addEventListener('click',function(){
+            let result='';
+            for(let i=1; i<=100; i++){
+                document.write("<table>");
+                if(i % 3 == 0){
+                    document.write("<tr>");
+                result = i;
+                document.write("<td>"+result+"</td>");             
+                document.write("</tr>");
+                    }
+                    document.write("</table>");
+                }
+        })
+            
+        
+    
+    </script>
+    <script>
+        document.getElementById('btn2').addEventListener('click',function(){
+            let result='';
+            let num = document.getElementById('num').value;
+            for(let i=num; i<=100; i++){
+                document.write("<table>");
+                if(i % num == 0){
+                    document.write("<tr>");
+                result = i;
+                document.write("<td>"+result+"</td>");             
+                document.write("</tr>");
+                    }
+                    document.write("</table>");
+                }
+        })
+    </script>
+</body>
+</html>

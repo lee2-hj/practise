@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for, while, do-while</title>
+</head>
+<body>
+    A: <input type="number" id="a"><br>
+    B: <input type="number" id="b"><br>
+    <button type="button" onclick="mult()">제곱계산기</button><br>
+
+    <h3 id="result">
+
+    </h3>
+    <h1>
+        while, do-whilea문은 반복횟수 예상하기 어려울때, 반복 횟수를 특정할 필요가 없을 때 주로 사용<br>
+        for: 반복의 횟수가 정해져 있을 때, 순차적인 실행
+    </h1>
+    <ul>
+        <li>
+            while(식){   //식이 true일때 반복<br>
+                처리문;  //반복처리<br>
+                증감식; //무한루프에 빠질 수 있음.<br>
+            }
+        </li><br>
+        <li>
+            반드시 1번은 처리 되는 구문
+            do{<br>
+                처리문;<br>
+                증감식;<br>
+            }while(식);
+        </li><br>
+        <li>
+            for(초기화 ; 조건식; 증감식;){<br>
+                     처리문;<br>
+            }
+        </li>
+    </ul>
+    <!-- a,b 값이 있을 때 a를 b번 곱하는 값을 출력 -->
+    <script>
+        function mult(){    
+         let a='';
+         let b='';
+        if( document.getElementById('b').value <= 0 || document.getElementById('a').value <= 0){
+            alert('0이하의 수는 입력이 불가능합니다.')
+         }else{
+              b = Number(document.getElementById('b').value);
+              a = Number(document.getElementById('a').value);
+         } 
+         console.log(typeof a);
+
+        let c = '';
+        let count = 0;
+        // for(i=1; i<=b; i++){
+        //    c= a**i;
+        // }
+        while(count < b){
+            c = a**b;
+            count++;
+        }
+        document.getElementById('result').innerText = `${a}의 ${b}제곱: ${c}`;
+    }
+    </script>
+</body>
+</html>

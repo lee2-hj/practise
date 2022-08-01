@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+</head>
+<body>
+    <!-- 호칭 로직 완성 -->
+    <!-- 부르는 사람 : 성별, 나이 -->
+    <!-- 대상: 성별, 나이 -->
+    <!-- 남동생, 여동생 / 형, 누나 ,언니,오빠 -->
+
+    <h1>
+        호칭정리
+    </h1>
+    나의 성별(m,f) : <input type="text" id="myGen" placeholder="m/f"><br>
+    나의 나이: <input type="text"id="myAge"><br>
+    너의 성별(m,f): <input type="text" id="yourGen" placeholder="m/f"><br>
+    너의 나이: <input type="text"id="yourAge"><br>
+    <button type="button" onclick="call()">호칭</button>
+    <h3 id="howCall">
+
+    </h3>
+    <script>
+        function call(){                    
+            let mGen = document.getElementById('myGen').value;
+            let yGen = document.getElementById('yourGen').value;
+            let mAge = document.getElementById('myAge').value;
+            let yAge = document.getElementById('yourAge').value;
+            if(mAge > yAge){
+                if(yGen=='m'){
+                    document.getElementById('howCall').innerText=`남동생입니다.`;
+                }else{
+                    document.getElementById('howCall').innerText=`여동생입니다.`;
+                }
+            }
+            if(mAge == yAge){
+                document.getElementById('howCall').innerText=`동갑입니다.`;
+            }
+            if(mAge < yAge){
+                if(mGen=='m' && yGen=='m'){
+                    document.getElementById('howCall').innerText=`형입니다.`;
+                }else if(mGen=='m' && yGen=='f'){
+                    document.getElementById('howCall').innerText=`누나입니다.`;
+                }else if(mGen=='f' && yGen=='m'){
+                    document.getElementById('howCall').innerText=`오빠입니다.`;
+                }else{
+                    document.getElementById('howCall').innerText=`언니입니다.`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

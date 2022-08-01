@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 퀴즈</title>
+</head>
+<body>
+    <h1>
+        구구단 영역(2*1=2 ~9*9 =81)내에서 랜덤으로 문제를 내면 정답을 맞추긴
+    </h1>
+    <ul>
+        <li>
+            총 문제는 10문제
+        </li>
+        <li>
+            문제를 풀 때 정답, 오답의 결과를 나타냄
+        </li>
+        <li>
+            총 10문제 중 정답률 출력
+        </li>
+    </ul>
+    <h1>
+        <button type="button" onclick="quiz()">문제 출제</button>
+    </h1>
+    <ol id="q"></ol>
+    <h1>
+        <button type="button" onclick="answer()">정답확인</button>
+    </h1>
+    <h3 id="printRatio">
+
+    </h3>
+    <script>
+        function quiz(){
+          let dan=0;
+          let incre =0;
+          const dap =[];
+          let count=0;
+          console.log(dan)
+          console.log(incre);
+          document.getElementById('q').innerHTML ='';
+          let gap='';
+          for(let i=1; i<=10; i++){
+              dan = Math.floor((Math.random()*8)+2);
+              incre = Math.floor((Math.random()*9)+1);
+              dap[i]= dan*incre;             
+              gap +=`<li>${dan} x ${incre} = <input type="text" id="mydap${i}"></li>`; 
+            }
+            document.getElementById('q').innerHTML= gap; 
+                
+        }
+        function answer(){
+            for(let i=1; i<=10; i++){
+            let mydap = document.getElementById(`mydap${i}`).value;
+            if(dap[i]== mydap[i]){
+                document.getElementById(`mydap${i}`).style.backgroundColor='green';
+                count++;
+            }else{
+                document.getElementById(`mydap${i}`).style.backgroundColor='red';
+            }               
+        }
+        document.getElementById('printRatio').innerText=`맞춘수: ${count} 점수: ${(count/10)*100}`
+        }
+
+    </script>
+</body>
+</html>

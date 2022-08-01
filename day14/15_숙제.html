@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙제</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="h1">Travel</h1>
+    <ul>
+        <li><a id="home" class="links" href="#img">Home</a></li>
+        <li><a id="seoul" class="links" href="#img">Seoul</a></li>
+        <li><a id="tokyo" class="links" href="#img">Tokyo</a></li>
+        <li><a id="paris" class="links" href="#img">Paris</a></li>
+        
+    </ul>
+    <img src="" alt="" name="img" id="image">
+
+    <script>
+     document.getElementById('home').addEventListener('click',()=>{
+        document.getElementById('image').src="D:/이희장/연습/day14/이미지/incheon.jpg";
+     });
+     document.getElementById('seoul').addEventListener('click',()  =>{
+        document.getElementById('image').src="D:/이희장/연습/day14/이미지/seoul.jpg";
+     });
+     document.getElementById('tokyo').addEventListener('click',()  =>{
+        document.getElementById('image').src="D:/이희장/연습/day14/이미지/tokyo.jpg";
+     });
+     document.getElementById('paris').addEventListener('click',()  =>{
+        document.getElementById('image').src="D:/이희장/연습/day14/이미지/paris.jpg";
+     });
+    </script>
+</body>
+</html>

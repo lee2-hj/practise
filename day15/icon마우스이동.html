@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .icon{
+            position: absolute;
+            top: 50%;;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .material-symbols-outlined {
+            color: gold;
+            font-size: 4rem;
+             
+        }        
+    </style>
+</head>
+<body>
+    <div class="icon">
+        <span class="material-symbols-outlined">
+            currency_bitcoin
+            </span>
+    </div>
+    <script>
+        document.body.addEventListener('mousemove',(e)=>{
+            console.log(e);
+            document.querySelector('.icon').style.left = e.pageX +'px';
+            document.querySelector('.icon').style.top = e.pageY + 'px';
+        })
+    </script>
+</body>
+</html>

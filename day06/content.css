@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+.title{
+    font-size: 2em;
+    
+}
+.content a{
+    text-decoration-line: none;
+    color: black;
+}
+.content a:hover{
+    color: blue;
+}
+.price{
+    font-size: 1.3em;
+}
+.title, .price{
+    margin-top: 10px;
+}
+.content{
+    display: table;
+    table-layout: fixed;
+    width: 80%;
+    margin: auto;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Nanum Brush Script', cursive;
+}
+.content .product{
+    border: 1px solid white;
+    display: table-cell;
+    text-align: center;
+    padding-left: 40px;
+}
+.product img{
+    width:90%
+}
+.product1{
+    border: 1px solid white;
+    display: table-cell;
+    text-align: center;
+    padding: 10px;
+}
+.product1 img{
+    width: 90%;
+}
+.product2{
+    border: 1px solid white;
+    display: table-cell;
+    text-align: center;
+    padding: 10px;
+}
+.product2 img{
+    width: 90%;
+}

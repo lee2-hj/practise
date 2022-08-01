@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펠린드롬(해설본)</title>
+</head>
+<body>
+    <h1>
+        펠린드롬: 거꾸로 읽어도 앞으로 읽어도 같은 단어 ex0 기러기, 스위스 토마토, 수박이박수
+    </h1>
+    단어입력: <input type="text" id="strData">
+    <button type="button" id="btn">입력</button>
+    <h3 id="result"></h3>
+    <script>
+        function isPallindrome(word){
+            // 기러기 3/2 = 1.5
+            let wordLen = Math.floor(word.length/2);
+            for(let i=0 ; i<=wordLen; i++){
+                
+                if(word.charAt(i) != word.charAt(word.length-1)){
+                    return false;
+                }
+            }return true;
+        }
+        document.getElementById('btn').addEventListener('click',function(){
+            let strData = document.getElementById('strData').value;
+            document.getElementById('result').innerText= `${isPallindrome(strData) ? "펠린드롬입니다." : "펠린드롬이 아닙니다."}`;
+        })
+    </script>
+</body>
+</html>

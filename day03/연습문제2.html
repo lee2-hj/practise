@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+    <style>
+        .p-box{
+            width: 100%;
+        }
+        .p-box>div{
+            display: inline-block;
+            width: calc(100%/4);
+            height: 30px;
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+            border-bottom: 2px solid black;
+            float: left;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            
+
+        }
+        .box4{
+            border-right: 2px solid black;
+        }
+        .p-box>div:hover{
+            color: blue;
+            font-weight: bold;
+            background-color: yellow;
+            border: 2px double red;
+            cursor: pointer;
+            top: -5px;
+
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="p-box">
+        <br>
+        <div class="box1">메뉴1</div>
+        <div class="box2">메뉴2</div>
+        <div class="box3">메뉴3</div>
+        <div class="box4">메뉴4</div>
+    </div>
+</body>
+</html>

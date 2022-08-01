@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 100%;
+}
+.header{
+    height: 60px;
+    background-color: gray;
+    color: white;
+}
+.text{
+    height: 350px;
+    background-color: white;
+}
+.left{
+    background-image: url(이미지/notebook.jpg);
+    background-repeat: no-repeat;
+    background-size: 500px;
+    height: 300px;        
+}
+.right{
+    background-image: url(이미지/keyboard.jpg);
+    background-repeat: no-repeat;
+    background-size: 500px;
+    height: 300px;     
+}
+.top{
+    background-image: url(이미지/monitor.jpg);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    height: ;
+}

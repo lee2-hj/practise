@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <h1>
+       String: 가장 많이 사용되는 데이터 타입
+    </h1>
+    <ul>
+        <li>
+            백슬래시(\)는 코드로 인식될 수 있는 문자를 문자로 변환시키는 역할 <br>
+            <script>
+            let str1= 'abcdefg \ <script>';
+            console.log(str1);
+            </script>
+        </li>
+        <li>
+            문자열은 index 번호를 가지고 있음. (0부터 시작)
+        </li>
+        <li>
+            문자열 데이터를 받을 때 문자열 값 내에서 개행을 추천하지 않음.
+        </li>
+        <li>
+            문자열 길이를 구할 때 : length ,번호를 나타낼때는 :length - 1(마지막 index)
+        </li>
+        <li>
+            문자 추출 관련 메서드: slice(), subString(),substr()
+        </li>
+        <li>
+            문자 대체 메서드: 
+            <ul>
+                <li>replace(oldstring, newstring)</li>
+                <li>trim(): 문자열 양쪽 공백제거</li>
+                <li>padStart(길이, 문자): 앞쪽에 길이만큼 문자 채우기</li>
+                <li>padEnd(길이,문자): 뒤쪽에 길이만큼 문자 채우기</li>
+                <li>문자값의 힌트, 전체값 중 일부만 보여줄 때 등.</li>
+            </ul>
+        </li>
+        <li>문자 추출 메서드:charAt(index) : index 번호의 문자를 추출 </li>
+        <li>
+            탐색 메서드
+            <ul>
+                <li>
+                    indexOf("str") : 해당 문자열의 index 번호 추출
+                </li>
+                <li>
+                    lastIndexof("str") :  해당 문자열의 index 번호 추출(뒤어서 부터 탐색)
+                </li>
+            </ul>
+        </li>
+        <li>
+            startWith(). endWith(): 지정한 문자열이 탐색 대상 문자열의 시작과/ 끝에 있는지 확인: true/false<br>
+            파라미터값 1: (지정한문자열)의 시작과 끝에 존재하는지를 확인<br>
+            파라미터값 2: startWith(지정문자열, 시작 index)
+        </li>
+    </ul>
+    <script>
+        let str = `Apple, Banana, Kiwi`;
+        // slice(startindex,endindex+1)
+        //startindex:시작 번지(포함)
+        //endindex: 끝번지 (미포함)+1
+        console.log(str.slice(0,5));
+        console.log(str.slice(7,13));
+        console.log(str.slice(7)); // 7번지 부터 끝까지 추출
+        console.log(str.slice(-4)); // 뒤에서 부터 추출
+
+        let startindex =0;
+        let count =5;
+        console.log(str.substr(startindex,count));
+        console.log(str.substr(7)); // 7번지부터 끝까지 추출
+        console.log(str.substr(7,6)); // 7번지부터 6개
+
+        console.log(str.substring(startindex,count));
+        console.log(str.substring(7,13)); // 7번지부터 12번지까지
+        console.log(str.substring(-4)); //음수사용불가
+        console.log('============================================');
+        
+        //replace
+        let text = `Apple.Banana,Kiwi`;
+        let text2 = `apple.banana,apple`;
+        console.log(text.replace("banana","papaya")); // replace는 대소문자 구분
+        console.log(text.replace(/banana/i,"papaya")); //정규식 표현 (/i:대소문자 구분x)
+        //똑같은 값이 2개인경우 하나만 변경됨.
+        console.log(text2.replace(/apple/g,"banana")); //정규식2 같은 값이 존재할 경우 모두 변경
+        console.log(text2.replace(/apple/gi,"banana")); // 정규식3 => 전체탐색 + 대소문자 구분x
+        console.log('==================================================');
+
+        //trim
+        let text3 = '                            apple';
+        console.log(text3.trim());
+        console.log(text3);
+
+        //주민등록번호 - 를 포함하여 생년월일을 제외한 -1성별코드까지 표현 뒤쪽을 별표
+        // 889101-1234567 = 880101-1******
+        let ju = '950101-1234567';
+        let rnum= ju.length;
+        let birth = ju.slice(0,8);
+        console.log(birth);
+        let rernum = birth.padEnd(rnum,"*"); //padEnd(길이,"*") 길이: 총길이
+        console.log(rernum);
+        let ju2 = ju.replace(ju.slice(-6),"*");
+        console.log(ju2);
+        //charAt
+        let getnum = ju.charAt(7);
+        console.log(getnum);
+        if(getnum ==1 || getnum==3){
+            console.log('남');
+        }else{
+                console.log('여');
+            }
+        console.log('=========================================');
+        //문자열 추출
+        let fullfilename ="20220714_javascript.string_method.html";
+        let html = fullfilename.substring(fullfilename.lastIndexOf(".")+1); // 확장자 출력시 많이 사용
+        let filename = fullfilename.substring(0,fullfilename.lastIndexOf("."));
+        console.log(html);
+        console.log(filename);
+        //작성 날짜만 추출
+        let date = fullfilename.substring(0,fullfilename.indexOf("_"));
+        console.log(date);
+        //method만 추출
+        let method = fullfilename.substring(fullfilename.lastIndexOf("_")+1,fullfilename.lastIndexOf("."));
+        console.log(method);
+
+        console.log(fullfilename.startsWith("2022")); // 시작하는 값 확인
+        console.log(fullfilename.endsWith('html')); // 끝나는 값 확인
+        
+    </script>
+</body>
+</html>

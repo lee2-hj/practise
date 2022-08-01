@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display연습</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .title{
+           display: block;
+           font-size: 1em;
+        }
+        .ex{
+            font-size: 0.8em;
+        }
+        .title, .ex{
+            margin-top: 10px;
+        }
+        .main{
+         display: table; /* dispay 형태를 table로 설정*/
+         table-layout: fixed; /* 테이블 고정*/
+         width: 100%; /*화면 전체 크기*/
+         /* background-color: aliceblue; */
+      }
+      .main .box{
+         border: 1px double white;
+         display: table-cell; /* 부모 속성안에 들어가는 표안의 셀*/
+         vertical-align: middle;
+         text-align: center;
+         padding: 10px;
+      }
+      .thumb img{
+               width: 90%;
+      }
+      .price{
+        font-weight: bold;
+      }
+      .box:hover{
+        cursor: pointer;
+        color: blue;
+      }
+      .box{
+         position: relative;
+      }
+      .wa1-1{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+      }
+      .box:hover .wa1-1{
+        display: block;
+      }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <a href="https://www.hermes.com/kr/ko/product/slim-d'hermes-squelette-lune-%EC%9B%8C%EC%B9%98,-39.5mm-W053606WW00/" target="_blank">
+        <span class="thumb">
+        <img src="D:\이희장\연습\day04\이미지\watch01-00.jpg" alt="" class="wa1">
+        <img src="D:\이희장\연습\day04\이미지\watch1.jpg" alt="" class="wa1-1">
+        </span></a>
+        <strong class="title">Slim d'Hermes Squelette Lune 워치, 39.5mm</strong>
+        <p class="ex">티타늄 및 플래티늄 워치, 스켈레톤 다이얼, 블랙 골드 선버스트 플랜지 및 그레이 디테일 미닛 트랙, 에르메스 매뉴팩처 H1953 울트라-씬 기계식 무브먼트, 지름 39.5mm, 그래파이트 컬러 무광 엘리게이터 스킨 소재의 롱 스트랩</p>
+        <p class="price">₩ 28,340,000</p>
+     </div>
+     <div class="box">
+        <a href="https://www.hermes.com/kr/ko/product/arceau-%EC%9B%8C%EC%B9%98,-40mm-W056553WW00/" target="_blank"><span class="thumb">
+        <img src="D:\이희장\연습\day04\이미지\wa2.jpg" alt="" class="wa1">
+        <img src="D:\이희장\연습\day04\이미지\watch2.jpg" alt="" class="wa1-1">
+        </span></a>
+        <strong class="title">Arceau 워치, 40mm</strong>
+        <p class="ex">스틸 워치, 화이트 래커 다이얼, 지름 40mm, 블랙 컬러 바레니아 카프스킨 소재의 교체 가능한 롱 스트랩</p>
+        <p class="price">₩ 4,100,000</p>
+     </div>
+     <div class="box">
+        <a href="https://www.hermes.com/kr/ko/product/slim-d'hermes-%EC%9B%8C%EC%B9%98,-39.5mm-W041760WW00/" target="_blank"><span class="thumb">
+        <img src="D:\이희장\연습\day04\이미지\watch3.jpg" alt="" class="wa1">
+        <img src="D:\이희장\연습\day04\이미지\wa3-00.jpg" alt="" class="wa1-1">
+        </span></a>
+        <strong class="title">Slim d'Hermes 워치, 39.5mm</strong>
+        <p class="ex">스틸 워치, 오팔린 실버 다이얼, 지름 39.5mm, 에르메스 매뉴팩처 H1950 울트라-씬 기계식 무브먼트, 하바나 컬러 무광 엘리게이터 스킨 소재의 롱 스트랩</p>
+        <p class="price">₩ 8,830,000</p>
+        </div>
+        <div class="box">
+            <a href="https://www.hermes.com/kr/ko/product/arceau-%EC%9B%8C%EC%B9%98,-40mm-W055765WW00/" target="_blank"><span class="thumb">
+            <img src="D:\이희장\연습\day04\이미지\watch4.jpg" alt="" class="w1">
+            <img src="D:\이희장\연습\day04\이미지\wa4.jpg" alt="" class="wa1-1">
+            </span></a>
+            <strong class="title">Arceau 워치, 40mm</strong>
+            <p class="ex">스틸 워치, 지름 40mm, 블루 래커 다이얼, 무광 어비스 블루 컬러 엘리게이터 스킨 소재의 롱 스트랩, 스틸 핀 버클</p>
+            <p class="price">₩ 4,330,000</p>
+            </div>
+     
+    </div>
+    
+</body>
+</html>
